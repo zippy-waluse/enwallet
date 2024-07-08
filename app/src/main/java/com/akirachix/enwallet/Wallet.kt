@@ -8,11 +8,18 @@ import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 
 
-abstract class Wallet(val walletList:List<enWalletAdapter>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WalletViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.wallet,parent,false)
+class Wallet(val walletList:List<enWalletAdapter>):RecyclerView.Adapter<WalletViewHolder>(){
+    override fun onCreateViewHolder(rvRecyclerView: ViewGroup, viewType: Int): WalletViewHolder {
+        var itemView = LayoutInflater.from(rvRecyclerView.context).inflate(R.layout.wallet, rvRecyclerView,false)
         return WalletViewHolder((itemView))
 
+    }
+
+    override fun onBindViewHolder(holder: WalletViewHolder, position: Int) {
+        val wallet = walletList[position]
+        holder.salary.text = wallet.salaries
+        holder.ksh.text = wallet.kes
+        holder.date.text = wallet.dates
     }
 
     override fun getItemCount(): Int {
@@ -21,12 +28,12 @@ abstract class Wallet(val walletList:List<enWalletAdapter>):RecyclerView.Adapter
 
 
 
-
-
 }
 
-class WalletViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+class WalletViewHolder(itemView: View):
+    RecyclerView.ViewHolder(itemView){
     var salary = itemView.findViewById<TextView>(R.id.salaryID)
     var ksh = itemView.findViewById<TextView>(R.id.kshID)
     var date = itemView.findViewById<TextView>(R.id.date_ID)
 }
+

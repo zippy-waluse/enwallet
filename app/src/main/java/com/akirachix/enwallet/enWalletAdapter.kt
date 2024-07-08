@@ -4,8 +4,8 @@ import android.widget.ImageView
 import java.sql.Date
 
 data class enWalletAdapter(
-    var salary:String,
-    var ksh:Any,
-    var date:String
+    var salaries:String,
+    var kes: String,
+    var dates:String
 
 )

@@ -23,74 +23,22 @@ class MainActivity : AppCompatActivity() {
 
 
     fun displayWallet(){
-        val wallet = listOf(
-            enWalletAdapter(
-                "Salary 1",
-                "KSH 42000",
-                "1st june 2024"
-            ),
+        var salary1 = enWalletAdapter("Salary","KSH 30000","1 June 2024")
+        var salary2 = enWalletAdapter("Salary","KSH 30000","1 June 2024")
+        var salary3 = enWalletAdapter("Salary","KSH 30000","1 June 2024")
+        var salary4 = enWalletAdapter("Salary","KSH 30000","1 June 2024")
+        var salary5 = enWalletAdapter("Salary","KSH 30000","1 June 2024")
+        var salary6 = enWalletAdapter("Salary","KSH 30000","1 June 2024")
+
+        val salarylist = listOf(salary1,salary2,salary3,salary4,salary5,salary6)
+        val walletsadapter = Wallet(salarylist)
+        binding.rvRecyclerView.adapter = walletsadapter
 
 
-            enWalletAdapter(
-                "Rent",
-                "KSH 15000",
-                "2st june 2024"
-            ),
 
 
-            enWalletAdapter(
-                "Dividends",
-                "KSH 24000",
-                "4st june 2024"
-            ),
 
 
-            enWalletAdapter(
-                "Electricty",
-                "KSH 500",
-                "4st june 2024"
-            ),
-
-
-            enWalletAdapter(
-                "Salary 1",
-                "KSH 42000",
-                "1st june 2024"
-            ),
-
-
-            enWalletAdapter(
-                "Internet",
-                "KSH 2500",
-                "5st june 2024"
-            ),
-
-
-            enWalletAdapter(
-                "Shooping",
-                "KSH 3500",
-                "11st june 2024"
-            ),
-
-            enWalletAdapter(
-                "Bus fare",
-                "KSH 500",
-                "11st june 2024"
-            ),
-
-            enWalletAdapter(
-                "Water",
-                "KSH 500",
-                "11st june 2024"
-            ),
-
-            enWalletAdapter(
-                "Fees",
-                "KSH 500",
-                "11st june 2024"
-            ),
-
-
-        )
     }
+
 }
